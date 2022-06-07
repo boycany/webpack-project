@@ -5,6 +5,10 @@
 }
 
 .root {
-  background-color: aliceblue;
+  /* background-color: aliceblue; */
+  background-image: url(./s01_EX.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 100vh;
 }
