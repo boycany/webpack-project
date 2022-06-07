@@ -15,7 +15,18 @@ module.exports = {
     rules: [
       {
         test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, "css-loader"],
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1,
+            }, //如果要在sass裡面下import語法，加這個設定webpack才讀得懂
+          },
+          {
+            loader: "postcss-loader",
+          }, //如果要配置loader以外的屬性的話，可以寫成物件形式
+        ],
       },
       //asset loader
       {
